@@ -19,7 +19,7 @@ module.exports = {
                data.chef_id, 
                data.image,
                data.title,
-               data.igredients,
+               data.ingredients,
                data.preparation,
                data.textarea,
                data.created_ad,

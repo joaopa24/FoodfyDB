@@ -7,7 +7,6 @@ routes.get("/Receitas", recipes.recipes)
 routes.get("/Sobre", recipes.about)
 routes.get("/Receitas/:id", recipes.recipe)
 
-
 routes.get("/admin/Receitas", recipes.index)
 routes.get("/admin/Receitas/criar", recipes.create)
 routes.get("/admin/Receitas/:id", recipes.recipe_admin)
