@@ -1,3 +1,5 @@
+const Intl = require('intl')
+const { date } = require("../../lib/utils")
 const Recipe = require("../models/recipe")
 
 module.exports = {
@@ -21,13 +23,21 @@ module.exports = {
     },
     recipe_admin(req, res) {
         const id = req.params.id;
-    
-        return res.render("Admin/recipe")
+        
+        Recipe.find(id , function(recipe) {
+            return res.render("Admin/recipe", { recipe })
+        })
+        
     },
     recipe_admin_edit(req, res) {
         const { id } = req.params
-       
-        return res.render(`Admin/edit`)
+        
+        Recipe.find(id , function(recipe) {
+            if(!recipe) return res.send("Receita não encontrada")
+
+            return res.render(`Admin/edit` , { recipe })
+        })
+        
     },
     post(req, res) {
         const keys = Object.keys(req.body)
@@ -41,10 +51,17 @@ module.exports = {
         })
     },
     put(req, res) {
-        const { id } = req.body
-        let index = 0
-
-        return res.render(`/admin/Receitas/${id}`)
+        const keys = Object.keys(req.body)
+        for (key of keys) {
+            if (req.body[key] == "") {
+                console.log(key)
+                return res.send("porfavor preencha todos os campos")
+            }
+        }
+        
+        Recipe.update(req.body, function(){
+            return res.render(`/admin/Receitas/${req.body.id}`)
+        })
     },
     delete(req, res) {
         const { id } = req.body

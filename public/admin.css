@@ -85,6 +85,7 @@ header .logo{
     
 }
 button[type="submit"],
+.button,
 .add_ingredient,
 .add_preparation{
     background-color: #6558C3 ;

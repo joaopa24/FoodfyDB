@@ -1,4 +1,5 @@
 const db = require('../../config/db')
+const { date , feature } = require("../../lib/utils")
 
 module.exports = {
     create(data , callback){
@@ -10,7 +11,7 @@ module.exports = {
                ingredients,
                preparation,
                information,
-               created_ad,
+               created_at,
                feature
            ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
              RETURNING id
@@ -22,14 +23,52 @@ module.exports = {
                data.ingredients,
                data.preparation,
                data.textarea,
-               data.created_ad,
-               data.feature
+               date(Date.now()).iso,
+               feature(data.featured)
         ]
 
         db.query(query , values ,function(err , results) {
-            if(err) throw `Database Error ${err}`
+            if(err) throw `Database ${err}`
 
             callback(results.rows[0])
         })
+    },
+    find(id , callback){
+        db.query(`SELECT * FROM recipes WHERE id = $1`, [id], function(err , results){
+            if(err) throw `Database ${err}`
+
+            callback(results.rows[0])
+        })
+    },
+    update(data , callback){
+        const query = `
+        UPDATE recipes SET 
+            chef_id=($1),
+            image=($2),
+            title=($3),
+            ingredients=($4),
+            preparation=($5),
+            information=($6),
+            created_at=($7),
+            feature=($8)
+            WHERE id = $9
+     `
+     const values = [
+            data.chef_id, 
+            data.image,
+            data.title,
+            data.ingredients,
+            data.preparation,
+            data.textarea,
+            date(Date.now()).iso,
+            feature(data.featured),
+            data.id
+     ]
+
+     db.query(query , values ,function(err , results) {
+         if(err) throw `Database ${err}`
+
+         callback(results.rows[0])
+     })
     }
 }
