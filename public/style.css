@@ -12,22 +12,33 @@ body{
 }
 /* Estudar flex box pra deixar o header sempre no topo*/
 /* margin 0 auto só preenche na horizontal - Perfeito */
+@keyframes AnimaçãoUp{
+     0%{
+        opacity:0;
+        transform: translateY(15px);
+     }
+     100%{
+        opacity:1;  
+     }
+}
 header {
      margin: 0 auto;
      width: 940px;
      padding: 30px 0px; 
      display: grid;
      grid-template-columns: 1fr 10fr;
+     animation:AnimaçãoUp 1000ms;
 }
 header a{
-     color: black;
+     color: #111111;
      text-decoration: none;
      font-size: 16px;
      font-weight:500;
      font-family: 'Roboto', sans-serif;
 }
-header a:active{
-     font-weight: 600;
+header a:hover{
+     color: #979797;
+     transition: 100ms;
 }
 .Pages{
      padding-left: 125px;
@@ -45,6 +56,7 @@ header a:active{
      text-align: center;
      padding: 26px 0px;
      margin-top: auto;
+
 }
 .footer p{
      font-family: 'Roboto', sans-serif;
@@ -54,7 +66,7 @@ header a:active{
 
 /* Home */
 .main{
-     min-height: 300px;
+     min-height: 370px;
      bottom: 0;
      width: 940px;
      position: relative;
@@ -65,6 +77,7 @@ header a:active{
      grid-template-columns: 1fr 1fr;
      gap: 50px;
      margin-bottom:32px;
+     animation:AnimaçãoUp 1000ms;
      
 }
 .main_info{
@@ -91,6 +104,7 @@ header a:active{
 .Highlights{
      width: 940px;
      margin:0 auto;
+     animation:AnimaçãoUp 1000ms;
 }
 .Highlights_title h1{
      font-family: 'Roboto', sans-serif;
@@ -136,6 +150,7 @@ header a:active{
      font-family: 'Roboto', sans-serif;
      text-align: justify;
      margin-bottom: 32px;
+     animation:AnimaçãoUp 1000ms;
      
 }
 .main_about h1{
@@ -156,6 +171,7 @@ header a:active{
      min-height: 80vh;
      width: 940px;
      margin: 0 auto;
+     animation:AnimaçãoUp 1000ms;
 }
 
 /* Modaloverlay */

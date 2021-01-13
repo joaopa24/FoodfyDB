@@ -18,7 +18,11 @@ module.exports = {
         return res.render("sobre")
     },
     recipe(req, res) {
-        return res.render("Receita")
+        const id = req.params.id;
+        
+        Recipe.find(id , function(recipe) {
+            return res.render("Receita", { recipe })
+        })
     },
     index(req, res) {
         Recipe.all(function(recipes) {
