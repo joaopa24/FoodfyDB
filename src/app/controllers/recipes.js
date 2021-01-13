@@ -1,4 +1,5 @@
 const Intl = require('intl')
+const { all } = require('../../../../Modulo-5/src/app/models/instructor')
 const { date } = require("../../lib/utils")
 const Recipe = require("../models/recipe")
 
@@ -16,7 +17,9 @@ module.exports = {
         return res.render("Receita")
     },
     index(req, res) {
-        return res.render("Admin/index")
+        Recipe.all(function(recipes) {
+            return res.render("Admin/index", { recipes })
+        })
     },
     create(req, res) {
         return res.render("Admin/create")

@@ -2,6 +2,13 @@ const db = require('../../config/db')
 const { date , feature } = require("../../lib/utils")
 
 module.exports = {
+    all(callback){
+        db.query(`SELECT * FROM recipes`, function(err , results){
+            if(err) `Database ${err}`
+            
+            callback(results.rows)
+        })
+    },
     create(data , callback){
         const query = `
            INSERT INTO recipes(
