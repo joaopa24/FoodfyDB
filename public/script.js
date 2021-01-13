@@ -24,6 +24,9 @@ document.querySelector('.fechar').addEventListener('click', function(){
 })
 
 document.querySelector('.fechar').addEventListener('click', function(){
-    Modaloverlay.classList.remove('active')
+    Modaloverlay.classList.add('removemodal')
+    setTimeout(function(){
+        Modaloverlay.classList.remove('removemodal')
+    }, 500)   
 })
 

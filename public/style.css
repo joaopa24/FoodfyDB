@@ -203,6 +203,10 @@ header a:hover{
      transition: 1000ms;
      
  }
+ .modal_overlay.removemodal{
+     opacity: 0;
+     transition: 1000ms;
+ }
  .modal_overlay.active .modal{
      animation:AnimaçãoUp 1000ms;
  }
