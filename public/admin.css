@@ -6,6 +6,7 @@
 body{
     font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
+    width:100vw;
 }
 /* header */
 @keyframes AnimaçãoUp{
@@ -89,7 +90,7 @@ header .logo{
 /*create*/
 .create_content{
     margin: 0 auto;
-    width: 957px;
+    width: 940px;
     animation:AnimaçãoUp 1000ms;
 }
 .create_header{
@@ -145,7 +146,7 @@ button[type="submit"] a{
 }
 .fields .item div textarea{
     resize: none;
-    width: 957px;
+    width: 940px;
     height: 250px;
     border: 1px solid  #DDDDDD;
     border-radius: 4px;
@@ -210,11 +211,11 @@ button[type="submit"] a{
 
 .main_image_show{
     position: relative;
-    width: 957px;
+    width: 940px;
     margin-bottom: 50px;
 }
 .main_image_show img{
-    width: 957px;
+    width: 940px;
     height: 500px;
     border-radius: 15px;
 }
@@ -232,7 +233,7 @@ button[type="submit"] a{
     color: #777777;
 }
 .show_info{
-    width: 957px;
+    width: 940px;
     box-sizing: border-box;
 }
 .show_ingredients,
