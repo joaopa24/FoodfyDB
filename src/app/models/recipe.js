@@ -18,9 +18,8 @@ module.exports = {
                ingredients,
                preparation,
                information,
-               created_at,
-               feature
-           ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+               created_at
+           ) VALUES ($1, $2, $3, $4, $5, $6, $7)
              RETURNING id
         `
         const values = [
@@ -31,7 +30,6 @@ module.exports = {
                data.preparation,
                data.textarea,
                date(Date.now()).iso,
-               feature(data.featured)
         ]
 
         db.query(query , values ,function(err , results) {
@@ -56,9 +54,8 @@ module.exports = {
             ingredients=($4),
             preparation=($5),
             information=($6),
-            created_at=($7),
-            feature=($8)
-            WHERE id = $9
+            created_at=($7)
+            WHERE id = $8
      `
      const values = [
             data.chef_id, 
@@ -68,9 +65,8 @@ module.exports = {
             data.preparation,
             data.textarea,
             date(Date.now()).iso,
-            feature(data.featured),
             data.id
-     ]
+     ] 
 
      db.query(query , values ,function(err , results) {
          if(err) throw `Database ${err}`

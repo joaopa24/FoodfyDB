@@ -16,12 +16,12 @@ header {
     justify-content: center;
 }
 header .logo{
-    width: 957px;
+    width: 940px;
     position: relative;
 }
 /* Cards and main index*/
 .recipes{
-    width: 957px;
+    width: 940px;
     box-sizing: border-box;
 }
 .recipe_title{

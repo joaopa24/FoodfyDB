@@ -5,10 +5,14 @@ const Recipe = require("../models/recipe")
 
 module.exports = {
     home(req, res) {
-        return res.render("home")
+        Recipe.all(function(recipes) {
+            return res.render("home", { recipes })
+        })
     },
     recipes(req, res) {
-        return res.render("receitas")
+        Recipe.all(function(recipes) {
+            return res.render("receitas", { recipes })
+        })
     },
     about(req, res) {
         return res.render("sobre")
@@ -63,7 +67,7 @@ module.exports = {
         }
         
         Recipe.update(req.body, function(){
-            return res.render(`/admin/Receitas/${req.body.id}`)
+            return res.redirect(`/admin/Receitas/${req.body.id}`)
         })
     },
     delete(req, res) {
