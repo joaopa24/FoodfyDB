@@ -200,6 +200,11 @@ header a:hover{
 .modal_overlay.active{
      opacity: 1;
      visibility: visible;
+     transition: 1000ms;
+     
+ }
+ .modal_overlay.active .modal{
+     animation:AnimaçãoUp 1000ms;
  }
 .close-modal {
      position: absolute;

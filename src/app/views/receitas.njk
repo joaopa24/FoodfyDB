@@ -3,7 +3,7 @@
     <div class="main_recipes">
         <section class="cards">
             {% for recipe in recipes %}
-                <div class="card" image="{{recipe.image}}">
+                <div class="card" image="{{recipe.image}}" id="{{recipe.id}}">
                     <div class="card_image">
                         <img src="{{recipe.image}}" alt="">
                     </div>
@@ -21,8 +21,8 @@
         <div class="modal">
             <div class="modalconteudo">
                 <img src="" alt="">
-                <h1>Test</h1>
-                <p>Test</p>
+                <h1></h1>
+                <p></p>
             </div>
             <div class="details">
                 <p>Mais informações</p>

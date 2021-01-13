@@ -6,6 +6,7 @@ const contenthide = document.querySelector('.content_text_hide')
 for(let card of cards){
     card.addEventListener("click",function(){
     Modaloverlay.classList.add("active")
+    const id = card.getAttribute("id")
     const image = card.getAttribute("image")
     const title = card.querySelector('.card_title').textContent
     const description = card.querySelector('.card_description').textContent
@@ -16,7 +17,7 @@ for(let card of cards){
         window.location.href = `/Receitas/${id}`
     })
     })
-}
+} 
 
 document.querySelector('.fechar').addEventListener('click', function(){
     Modaloverlay.classList.remove('active')
