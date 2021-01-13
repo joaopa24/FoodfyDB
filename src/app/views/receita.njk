@@ -2,11 +2,11 @@
 {% block content %}
     <div class="main_recipe">
         <div class="image_page_recipe">
-            <img src="/assets/{{recipe.id}}.png" alt="">
+            <img src="{{recipe.image}}" alt="">
         </div>
         <div class="title_author">
             <h1>{{recipe.title}}</h1>
-            <p>{{recipe.description}}</p>
+            <p>{{recipe.chef_id}}</p>
         </div>
         <div class="ingredients">
             <div class="title_ingredients">
