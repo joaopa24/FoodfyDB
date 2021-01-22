@@ -30,6 +30,21 @@ header .logo{
     width: 940px;
     position: relative;
     animation:AnimaçãoUp 1000ms;
+    display: flex;
+    align-items: center;
+}
+header .logo .linksadmin{
+    margin-left: 50px;
+}
+.linksadmin{
+    font-size: 15px;
+    font-weight: bold;
+}
+.linksadmin a{
+    color: #999999;
+    text-decoration:none;
+    text-transform: uppercase;
+    margin-right: 30px;
 }
 /* Cards and main index*/
 .recipes{
