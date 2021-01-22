@@ -2,6 +2,7 @@ const express = require('express')
 const routes = express.Router()
 const recipes = require('./app/controllers/recipes')
 
+
 routes.get("/", recipes.home)
 routes.get("/Receitas", recipes.recipes)
 routes.get("/Sobre", recipes.about)

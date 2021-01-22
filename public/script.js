@@ -3,6 +3,7 @@ const cards = document.querySelectorAll('.card') /* tava .cards */
 const modal = document.querySelector('.modal')
 const contenthide = document.querySelector('.content_text_hide')
 
+
 for(let card of cards){
     card.addEventListener("click",function(){
     Modaloverlay.classList.add("active")
