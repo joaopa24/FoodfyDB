@@ -50,6 +50,9 @@ header a:hover{
      margin-right: 25px;
      letter-spacing:1px;
 }
+.active_page{
+     font-weight: bold;
+}
 .footer{
      background: #EEEEEE;
      bottom: 0px;
