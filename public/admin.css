@@ -40,12 +40,17 @@ header .logo .linksadmin{
     font-size: 15px;
     font-weight: bold;
 }
+.linksadmin a.active_page_admin{
+    color: #FFFFFF;
+}
+
 .linksadmin a{
     color: #999999;
     text-decoration:none;
     text-transform: uppercase;
     margin-right: 30px;
 }
+
 /* Cards and main index*/
 .recipes{
     animation:AnimaçãoUp 1000ms;
