@@ -1,6 +1,3 @@
-const Intl = require('intl')
-const { all } = require('../../../../Modulo-5/src/app/models/instructor')
-const { date } = require("../../lib/utils")
 const Recipe = require("../models/recipe")
 
 module.exports = {
