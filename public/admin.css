@@ -1,3 +1,7 @@
+:root {
+    --color-purple:#6558C3;
+}
+
 *,html{
     margin: 0;
     border: 0;
@@ -52,12 +56,12 @@ header .logo .linksadmin{
 }
 
 /* Cards and main index*/
-.recipes{
+.recipes,.chefs{
     animation:AnimaçãoUp 1000ms;
     width: 940px;
     box-sizing: border-box;
 }
-.recipe_title{
+.recipe_title,.chefs_title{
     font-size: 24px;
     margin-bottom: 30px;
     font-family: 'Roboto-Bold', sans-serif;
@@ -100,11 +104,12 @@ header .logo .linksadmin{
     font-family: 'Roboto-Bold', sans-serif;
     font-weight: bolder;
     text-decoration: none;
-    color: #111111;
+    font-size: 16px;
+    color: var(--color-purple);
 }
 .card_info a:hover{
     transition: 100ms;
-    color: #1f1c1cc1;
+    filter:brightness(0.75);
     
 }
 /*create*/
@@ -286,3 +291,4 @@ button[type="submit"] a{
     margin-bottom: 100px;
     text-align: justify;
 }
+
