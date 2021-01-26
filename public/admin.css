@@ -142,16 +142,23 @@ button[type="submit"],
     font-weight: bold;
     border-radius: 4px;
 }
-.add_ingredient,
-.add_preparation{
+.content_add{
     display: flex;
     margin-top:10px;
+}
+.add_ingredient,
+.add_preparation{
+    
     font-family: 'Roboto-Bold', sans-serif;
     font-size: 16px;
     color: var(--color-purple);
     font-weight: bold;
-    
-
+    cursor: pointer; 
+ 
+}
+.add_ingredient:active,
+.add_preparation:active{
+    filter: brightness(0.75); 
 }
 button[type="submit"] a{
     text-decoration: none;
