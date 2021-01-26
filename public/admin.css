@@ -132,9 +132,7 @@ header .logo .linksadmin{
     
 }
 button[type="submit"],
-.button,
-.add_ingredient,
-.add_preparation{
+.button{
     background-color: #6558C3 ;
     color: #FFFFFF;
     font-size: 16px;
@@ -143,6 +141,17 @@ button[type="submit"],
     font-family: 'Roboto-Bold', sans-serif;
     font-weight: bold;
     border-radius: 4px;
+}
+.add_ingredient,
+.add_preparation{
+    display: flex;
+    margin-top:10px;
+    font-family: 'Roboto-Bold', sans-serif;
+    font-size: 16px;
+    color: var(--color-purple);
+    font-weight: bold;
+    
+
 }
 button[type="submit"] a{
     text-decoration: none;
@@ -164,6 +173,8 @@ button[type="submit"] a{
 }
 .fields .item{
     margin-bottom: 30px;
+    box-sizing: border-box;
+    
 }
 
 .fields .item:last-child div{
