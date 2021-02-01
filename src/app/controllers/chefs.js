@@ -7,6 +7,13 @@ module.exports = {
     chefsAdmin(req, res){
         return res.render('Admin/chefs') 
     },
+    chefAdmin(req, res){
+        const { id } = req.params
+
+        Chef.find(id , function(chef){
+            return res.render('Admin/chef', { chef })
+        })
+    },
     chefsCreate(req, res){
         return res.render('Admin/createChef')
     },
