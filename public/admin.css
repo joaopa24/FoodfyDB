@@ -309,4 +309,46 @@ button[type="submit"] a{
     margin-bottom: 100px;
     text-align: justify;
 }
+/* admin chef */
+.chef_content{
+    display: flex;
+    justify-content: center;
+}
+.chef{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.chef img{
+    margin-top: 30px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+.chef .title_chef{
+    margin-top: 30px;
+}
+.chef .title_chef p{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+    font-size: 36px;
+}
+.chef .chef_recipes{
+    margin-top: 6px;
+}
 
+.chef .chef_recipes p{
+    font-family: 'Roboto', sans-serif;
+    color: #777777;
+    font-size: 20px;
+}
+.recipes_of_chef{
+    margin-top: 50px;
+}
+.recipes_of_chef p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    color: #111111;
+    font-weight: bolder;
+}

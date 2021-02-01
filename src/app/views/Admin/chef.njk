@@ -1,7 +1,30 @@
 {% extends "Admin/layout.njk" %}
 {% block content %}
     <div class="global">
+        <div class="chefs">
+            <div class="chefs_title">
+                <p>Chef:{{ chef.name }}</p>
+                <a class="button" href="/admin/Chefs/criar">Editar Chef</a>
+            </div>
+            <div class="chef_content">
+                <div class="chef">
+                    <img src="{{ chef.avatar_url }}" alt="">
+                    <div class="title_chef">
+                        <p>{{ chef.name }}</p>
+                    </div>
+                    <div class="chef_recipes">
+                        <p>4 receitas</p>
+                    </div>
+                </div>
+            </div>
+            <div class="recipes_of_chef">
+            <p>Receitas</p>
+            <div class="recipes_chefs">
 
-        
+           
+
+            </div> 
+            </div>
+        </div>
     </div>
 {% endblock %}
