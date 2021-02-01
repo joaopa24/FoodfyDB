@@ -11,8 +11,8 @@ module.exports = {
     create(data , callback){
         const query = `
         INSERT INTO Chefs(
-            avatar,
-            nome_chef
+            avatar_url,
+            name
         ) VALUES ($1 , $2)
         `
         

@@ -11,6 +11,7 @@ routes.get("/Receitas/:id", recipes.recipe)
 routes.get("/Chefs", chef.chefs)
 routes.get("/admin/Chefs", chef.chefsAdmin)
 routes.get("/admin/Chefs/criar", chef.chefsCreate)
+routes.post("/admin/Chefs", chef.post)
 
 routes.get("/admin/Receitas", recipes.index)
 routes.get("/admin/Receitas/criar", recipes.create)
