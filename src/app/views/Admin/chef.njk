@@ -3,14 +3,14 @@
     <div class="global">
         <div class="chefs">
             <div class="chefs_title">
-                <p>Chef:{{ chef.name }}</p>
+                <p>Chef:{{ Chef.name }}</p>
                 <a class="button" href="/admin/Chefs/criar">Editar Chef</a>
             </div>
             <div class="chef_content">
                 <div class="chef">
-                    <img src="{{ chef.avatar_url }}" alt="">
+                    <img src="{{ Chef.avatar_url }}" alt="">
                     <div class="title_chef">
-                        <p>{{ chef.name }}</p>
+                        <p>{{ Chef.name }}</p>
                     </div>
                     <div class="chef_recipes">
                         <p>4 receitas</p>
@@ -18,12 +18,24 @@
                 </div>
             </div>
             <div class="recipes_of_chef">
-            <p>Receitas</p>
-            <div class="recipes_chefs">
-
-           
-
-            </div> 
+                <p>Receitas</p>
+                <div class="recipes_chefs">
+                    <div class="recipe_cards">
+                        {% for recipe in recipes %}
+                            <div class="card" id="{{recipe.id}}">
+                                <div class="card_image">
+                                    <img src="{{recipe.image}}" alt="{{recipe.id}}">
+                                </div>
+                                <div class="card_info">
+                                    <p>{{recipe.title}}</p>
+                                    <p>por
+                                        {{recipe.chef}}</p>
+                                    <a href="/admin/Receitas/{{recipe.id}}">Visualizar</a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
         </div>
     </div>

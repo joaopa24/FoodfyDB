@@ -7,7 +7,17 @@
                 <a class="button" href="/admin/Chefs/criar">Cadastrar Chef</a>
             </div>
             <div class="chefs_cards">
-       
+            {% for Chef in Chefs %}                
+                <div class="chef_card">
+                    <div class="image_card_chef">
+                        <img src="{{ Chef.avatar_url }}" alt="">
+                    </div>
+                    <div class="card_title_chef">
+                        <p>{{ Chef.name }}</p>
+                    </div>
+                    <a href="">Visualizar</a>
+                </div>
+            {% endfor %}
             </div>
         </div>
     </div>

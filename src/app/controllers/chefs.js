@@ -1,8 +1,11 @@
+const chef = require("../models/chef")
 const Chef = require("../models/chef")
 
 module.exports = {
     chefs(req, res){
-        return res.render("chef")
+        Chef.all(function(Chefs){
+            return res.render("chef", { Chefs })
+        })
     },
     chefsAdmin(req, res){
         return res.render('Admin/chefs') 
@@ -10,8 +13,8 @@ module.exports = {
     chefAdmin(req, res){
         const { id } = req.params
 
-        Chef.find(id , function(chef){
-            return res.render('Admin/chef', { chef })
+        Chef.find(id , function(Chef){
+            return res.render('Admin/chef', { Chef })
         })
     },
     chefsCreate(req, res){
