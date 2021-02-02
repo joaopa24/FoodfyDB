@@ -8,7 +8,9 @@ module.exports = {
         })
     },
     chefsAdmin(req, res){
-        return res.render('Admin/chefs') 
+        Chef.all(function(Chefs){
+            return res.render('Admin/chefs', { Chefs })
+        })
     },
     chefAdmin(req, res){
         const { id } = req.params

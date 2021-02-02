@@ -4,7 +4,7 @@ const { date , feature } = require("../../lib/utils")
 module.exports = {
     all(callback){
         db.query(`SELECT * FROM recipes`, function(err , results){
-            if(err) `Database ${err}`
+            if(err) throw `Database ${err}`
             
             callback(results.rows)
         })
