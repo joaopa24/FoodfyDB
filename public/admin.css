@@ -355,10 +355,11 @@ button[type="submit"] a{
 /* chefs */
 .chefs_cards{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
 }
 .chef_card{
     display: flex;
+    margin-bottom: 30px;
 }
 .chef_card img{
     width: 64px;

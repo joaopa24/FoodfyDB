@@ -19,6 +19,13 @@ module.exports = {
             return res.render('Admin/chef', { Chef })
         })
     },
+    chefAdmin_edit(req,res){
+        const { id } = req.params
+
+        Chef.find(id,function(Chef){
+            return res.render('Admin/editchef', { Chef })
+        })
+    },
     chefsCreate(req, res){
         return res.render('Admin/createChef')
     },
@@ -32,6 +39,19 @@ module.exports = {
        
         Chef.create(req.body, function(Chef){
             return res.redirect(`/admin/Chefs/${Chef.id}`)
+        }) 
+    },
+    put(req, res){
+        const keys = Object.keys(req.body)
+        for(key of keys){
+            if(req.body[key] == ""){
+                return res.send("Preencha todos os campos!")
+            }
+        }
+        console.log(req.body.id)
+       
+        Chef.update(req.body, function(){
+            return res.redirect(`/admin/Chefs/${req.body.id}`)
         }) 
     }
 }
