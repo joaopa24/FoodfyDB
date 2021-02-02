@@ -369,3 +369,46 @@ header a:hover{
      cursor: pointer;
      text-transform: uppercase;
 }
+/* Chefs */
+.global{
+     animation:AnimaçãoUp 1000ms;
+     box-sizing: border-box;
+     display: flex;
+     justify-content: center;
+     width:100vw;
+ }
+ .chefs{
+     width: 940px;
+     box-sizing: border-box;
+ }
+.chefs_cards{
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr ;
+ }
+ .chef_card{
+     display: flex;
+     margin-bottom: 30px;
+ }
+ .chef_card img{
+     width: 64px;
+     height: 64px;
+     border-radius: 50%;
+ }
+ .name_chef{
+     box-sizing: border-box;
+     margin: 10px 10px 10px 20px;
+ }
+ .name_chef p{
+     margin-bottom: 10px;
+     font-weight: 500;
+     font-size: 18px;
+     font-family: 'Roboto', sans-serif;
+ 
+ }
+ .name_chef a{
+     font-family: 'Roboto', sans-serif;
+     font-size: 14px;
+     color: var(--color-purple);
+     text-decoration: none;
+     font-weight: bold;
+ }
