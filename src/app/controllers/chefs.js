@@ -53,5 +53,11 @@ module.exports = {
         Chef.update(req.body, function(){
             return res.redirect(`/admin/Chefs/${req.body.id}`)
         }) 
+    },
+    delete(req,res){
+        Chef.delete(req.body.id, function(){
+            return res.redirect("/admin/Chefs")
+        })
     }
+    
 }

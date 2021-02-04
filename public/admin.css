@@ -214,7 +214,16 @@ button[type="submit"] a{
     top: 0 ;
     right:0;
 }
+#form-delete-chef {
+    position: absolute;
+    margin-right: 135px;
+    top: 0 ;
+    right:0;
+}
 #form-delete button[type="submit"]{
+    background-color: #DC4747 ;
+}
+#form-delete-chef button[type="submit"]{
     background-color: #DC4747 ;
 }
 /* Show */

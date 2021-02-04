@@ -14,6 +14,7 @@ routes.get("/admin/Chefs/criar", chef.chefsCreate)
 routes.get("/admin/Chefs/:id", chef.chefAdmin)
 routes.get("/admin/Chefs/:id/edit", chef.chefAdmin_edit)
 routes.post("/admin/Chefs", chef.post)
+routes.delete("/admin/Chefs", chef.delete)
 routes.put("/admin/Chefs", chef.put)
 
 routes.get("/admin/Receitas", recipes.index)

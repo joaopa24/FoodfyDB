@@ -59,5 +59,12 @@ module.exports = {
             
             callback(results.rows[0])
         })
+    },
+    delete(id, callback){
+        db.query(`DELETE FROM chefs WHERE id = $1`, [id],function(err , results){
+            if(err) throw `${err}`
+ 
+            return callback()
+        })
     }
 }
