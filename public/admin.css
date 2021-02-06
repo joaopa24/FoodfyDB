@@ -328,11 +328,12 @@ button[type="submit"] a{
     justify-content: center;
     flex-direction: column;
     text-align: center;
+
 }
-.chef img{
-    margin-top: 30px;
-    width: 250px;
-    height: 250px;
+.image_card_chef{
+    background-size: cover;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
 }
 .chef .title_chef{
