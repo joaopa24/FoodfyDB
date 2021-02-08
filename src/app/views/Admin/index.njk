@@ -16,7 +16,9 @@
                </div>
                <div class="card_info">
                    <p>{{recipe.title}}</p>
-                   <p>por {{recipe.chef}}</p>
+                   <p>por {% for chef in chefsOptions %}
+                    {% if recipe.chef_id === chef.id %}{{ chef.name }}{% endif %}
+                   {% endfor %}</p>
                    <a href="/admin/Receitas/{{recipe.id}}">Visualizar</a>
                </div>
            </div>

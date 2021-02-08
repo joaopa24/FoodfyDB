@@ -45,6 +45,13 @@ module.exports = {
             callback(results.rows[0])
         })
     },
+    chefsOption(callback){
+        db.query(`SELECT name, id FROM chefs`, function(err,results){
+            if(err) throw `${err}`
+
+            callback(results.rows)
+        })   
+    },
     update(data , callback){
         const query = `
         UPDATE recipes SET 
@@ -58,7 +65,7 @@ module.exports = {
             WHERE id = $8
      `
      const values = [
-            data.chef_id, 
+            data.chef, 
             data.image,
             data.title,
             data.ingredients,

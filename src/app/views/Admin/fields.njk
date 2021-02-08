@@ -14,7 +14,11 @@
     <div class="item">
         <p>Autor</p>
         <div>
-            <input type="text" name="chef_id" value="{{recipe.chef_id}}">
+            <select name="chef">
+            {% for chef in chefsOptions %}
+             <option value="{{ chef.id }}" {% if recipe.chef_id == chef.id %}selected{% endif %}>{{chef.name}}</option>
+            {% endfor %}
+            </select>
         </div>
     </div>
     <div class="item">
@@ -43,7 +47,7 @@
     <div class="item">
         <p>Informações adicionais</p>
         <div>
-            <textarea name="textarea" cols="100%" rows="10" value="{{recipe.textarea}}"></textarea>
+            <textarea name="textarea" cols="100%" rows="10" value="{{recipe.information}}">{{recipe.information}}</textarea>
         </div>
     </div>
 </div>

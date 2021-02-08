@@ -16,7 +16,9 @@
             <div class="show_info">
                 <div class="title">
                     <p>{{recipe.title}}</p>
-                    <p>{{recipe.description}}</p>
+                    <p>{% for chef in chefsOptions %}
+                    {% if recipe.chef_id === chef.id %}{{ chef.name }}{% endif %}
+                   {% endfor %}</p>
                 </div>
                 <div class="show_ingredients">
                     <p>Ingredientes</p>

@@ -6,7 +6,12 @@
         </div>
         <div class="title_author">
             <h1>{{recipe.title}}</h1>
-            <p>{{recipe.chef_id}}</p>
+            <p>
+                {% for chef in chefsOptions %}
+                    {% if recipe.chef_id === chef.id %}{{ chef.name }}
+                    {% endif %}
+                {% endfor %}
+            </p>
         </div>
         <div class="ingredients">
             <div class="title_ingredients">
@@ -16,11 +21,11 @@
                 </div>
             </div>
             <div class="content_ingredients">
-            <ul>
-                {% for item in recipe.ingredients %}
-                    <li>{{item}}</li>
-                {% endfor %}
-            </ul>
+                <ul>
+                    {% for item in recipe.ingredients %}
+                        <li>{{item}}</li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
         <div class="preparation_main">
@@ -30,7 +35,7 @@
                     <p>Mostrar</p>
                 </div>
             </div>
-            <div class="content_preparation hide" >
+            <div class="content_preparation hide">
                 <ul>
                     {% for item in recipe.preparation %}
                         <li>{{item}}</li>

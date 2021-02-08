@@ -3,12 +3,16 @@ const Recipe = require("../models/recipe")
 module.exports = {
     home(req, res) {
         Recipe.all(function(recipes) {
-            return res.render("home", { recipes })
+            Recipe.chefsOption(function(chefsOptions){
+                return res.render("home", { chefsOptions , recipes })
+            })
         })
     },
     recipes(req, res) {
         Recipe.all(function(recipes) {
-            return res.render("receitas", { recipes })
+            Recipe.chefsOption(function(chefsOptions){
+                return res.render("receitas", { chefsOptions , recipes })
+            })
         })
     },
     about(req, res) {
@@ -18,22 +22,30 @@ module.exports = {
         const id = req.params.id;
         
         Recipe.find(id , function(recipe) {
-            return res.render("Receita", { recipe })
+            Recipe.chefsOption(function(chefsOptions){
+                return res.render("Receita", { chefsOptions , recipe })
+            })
         })
     },
     index(req, res) {
         Recipe.all(function(recipes) {
-            return res.render("Admin/index", { recipes })
+            Recipe.chefsOption(function(chefsOptions){
+                return res.render("Admin/index", { chefsOptions , recipes })
+            })
         })
     },
     create(req, res) {
-        return res.render("Admin/create")
+        Recipe.chefsOption(function(chefsOptions){
+            return res.render("Admin/create", { chefsOptions })
+        })
     },
     recipe_admin(req, res) {
         const id = req.params.id;
         
         Recipe.find(id , function(recipe) {
-            return res.render("Admin/recipe", { recipe })
+            Recipe.chefsOption(function(chefsOptions){
+                return res.render("Admin/recipe", { chefsOptions , recipe })
+            })
         })
         
     },
@@ -42,10 +54,11 @@ module.exports = {
         
         Recipe.find(id , function(recipe) {
             if(!recipe) return res.send("Receita não encontrada")
-
-            return res.render(`Admin/edit` , { recipe })
+            
+            Recipe.chefsOption(function(chefsOptions){
+                return res.render("Admin/edit", { chefsOptions , recipe })
+            })
         })
-        
     },
     post(req, res) {
         const keys = Object.keys(req.body)
@@ -66,7 +79,7 @@ module.exports = {
                 return res.send("porfavor preencha todos os campos")
             }
         }
-        
+        console.log(req.body)
         Recipe.update(req.body, function(){
             return res.redirect(`/admin/Receitas/${req.body.id}`)
         })
