@@ -16,8 +16,21 @@ module.exports = {
            callback(results.rows)
        })   
     },
+    findrecipes(id, callback){
+        db.query(`SELECT recipes.*, count(recipes) AS total_recipes_chef
+        FROM recipes
+        LEFT JOIN chefs ON (recipes.chef_id = chef.id)
+        FROM chefs WHERE id = $1
+        GROUP BY chefs.id
+        `, [id],function(err , results){
+            if(err) throw `${err}`
+ 
+            callback(results.rows[0])
+        })
+     },
     find(id, callback){
-       db.query(`SELECT * FROM chefs WHERE id = $1`, [id],function(err , results){
+       db.query(`SELECT chefs.* FROM chefs WHERE id = $1
+       `, [id],function(err , results){
            if(err) throw `${err}`
 
            callback(results.rows[0])
