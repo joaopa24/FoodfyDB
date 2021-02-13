@@ -16,7 +16,7 @@ module.exports = {
            callback(results.rows)
        })   
     },
-    findrecipes(id, callback){
+    findrecipes(callback){
         db.query(`
         SELECT chefs.*, COUNT (recipes) AS total_recipes_chef
         FROM chefs
@@ -26,7 +26,7 @@ module.exports = {
         `, [id],function(err , results){
             if(err) throw `${err}`
  
-            callback(results.rows[0])
+            callback(results.rows)
         })
      },
     find(id, callback){

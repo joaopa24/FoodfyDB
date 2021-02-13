@@ -18,17 +18,15 @@ module.exports = {
         Chef.find(id , function(Chef){
             return res.render('Admin/chef', { Chef })
         })
-
-        Chef.findrecipes(id, function(chef_recipes){
-            return({chef_recipes})
-        })
        
     },
     chefAdmin_edit(req,res){
         const { id } = req.params
-
-        Chef.find(id,function(Chef){
-            return res.render('Admin/editchef', { Chef })
+        
+        Chef.findrecipes(function(chef_recipes){
+            Chef.find(id,function(Chef){
+                return res.render('Admin/editchef', { Chef , chef_recipes})
+            })
         })
     },
     chefsCreate(req, res){
