@@ -14,7 +14,11 @@
                         <p>{{ Chef.name }}</p>
                     </div>
                     <div class="chef_recipes">
-                        <p>4 receitas</p>
+                        <p>{% for chef in chef_recipes %}
+                            {% if chef.id == Chef.id %}
+                                {{ chef.total_recipes }}
+                            {% endif %}
+                        {% endfor %} Receitas</p>
                     </div>
                 </div>
             </div>
@@ -22,7 +26,9 @@
                 <p>Receitas</p>
                 <div class="recipes_chefs">
                     <div class="recipe_cards">
+                        
                         {% for recipe in recipes %}
+                           
                             <div class="card" id="{{recipe.id}}">
                                 <div class="card_image">
                                     <img src="{{recipe.image}}" alt="{{recipe.id}}">
@@ -34,7 +40,9 @@
                                     <a href="/admin/Receitas/{{recipe.id}}">Visualizar</a>
                                 </div>
                             </div>
+                           
                         {% endfor %}
+                
                     </div>
                 </div>
             </div>

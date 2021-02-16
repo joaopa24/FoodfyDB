@@ -16,14 +16,21 @@ module.exports = {
            callback(results.rows)
        })   
     },
+    allrecipes(callback){
+        db.query(`SELECT * FROM recipes`, function(err , results){
+            if(err) throw `Database ${err}`
+            
+            callback(results.rows)
+        })
+    },
     findrecipes(callback){
         db.query(`
-        SELECT chefs.*, COUNT (recipes) AS total_recipes_chef
+        SELECT chefs.*, COUNT (recipes) AS total_recipes
         FROM chefs
         LEFT JOIN recipes ON (chefs.id = recipes.chef_id)
         GROUP BY chefs.id
-        ORDER BY chefs.id
-        `, [id],function(err , results){
+        
+        `,function(err , results){
             if(err) throw `${err}`
  
             callback(results.rows)
