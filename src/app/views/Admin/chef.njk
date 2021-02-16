@@ -28,7 +28,7 @@
                     <div class="recipe_cards">
                         
                         {% for recipe in recipes %}
-                           
+                           {% if recipe.chef_id == Chef.id %}
                             <div class="card" id="{{recipe.id}}">
                                 <div class="card_image">
                                     <img src="{{recipe.image}}" alt="{{recipe.id}}">
@@ -40,7 +40,7 @@
                                     <a href="/admin/Receitas/{{recipe.id}}">Visualizar</a>
                                 </div>
                             </div>
-                           
+                           {% endif %}
                         {% endfor %}
                 
                     </div>
