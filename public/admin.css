@@ -146,6 +146,7 @@ button[type="submit"],
     font-family: 'Roboto-Bold', sans-serif;
     font-weight: bold;
     border-radius: 4px;
+    
 }
 .content_add{
     display: flex;
@@ -154,7 +155,7 @@ button[type="submit"],
 .add_ingredient,
 .add_preparation{
     
-    font-family: 'Roboto-Bold', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     color: var(--color-purple);
     font-weight: bold;
@@ -302,7 +303,7 @@ button[type="submit"] a{
 .show_preparation p:first-child,
 .show_information p:first-child{
     font-size: 24px;
-    font-family: 'Roboto-Bold', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
     margin-bottom: 20px;
 }
@@ -351,7 +352,7 @@ button[type="submit"] a{
     margin-top: 30px;
 }
 .chef .title_chef p{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto-Bold', sans-serif;
     font-weight: bolder;
     font-size: 36px;
 }
