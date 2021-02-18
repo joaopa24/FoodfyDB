@@ -2,16 +2,16 @@ const Recipe = require("../models/recipe")
 
 module.exports = {
     home(req, res) {
-        Recipe.all(function(recipes) {
-            Recipe.chefsOption(function(chefsOptions){
-                return res.render("home", { chefsOptions , recipes })
+        Recipe.all(function (recipes) {
+            Recipe.chefsOption(function (chefsOptions) {
+                return res.render("home", { chefsOptions, recipes })
             })
         })
     },
     recipes(req, res) {
-        Recipe.all(function(recipes) {
-            Recipe.chefsOption(function(chefsOptions){
-                return res.render("receitas", { chefsOptions , recipes })
+        Recipe.all(function (recipes) {
+            Recipe.chefsOption(function (chefsOptions) {
+                return res.render("receitas", { chefsOptions, recipes })
             })
         })
     },
@@ -20,43 +20,43 @@ module.exports = {
     },
     recipe(req, res) {
         const id = req.params.id;
-        
-        Recipe.find(id , function(recipe) {
-            Recipe.chefsOption(function(chefsOptions){
-                return res.render("Receita", { chefsOptions , recipe })
+
+        Recipe.find(id, function (recipe) {
+            Recipe.chefsOption(function (chefsOptions) {
+                return res.render("receita", { chefsOptions, recipe })
             })
         })
     },
     index(req, res) {
-        Recipe.all(function(recipes) {
-            Recipe.chefsOption(function(chefsOptions){
-                return res.render("Admin/index", { chefsOptions , recipes })
+        Recipe.all(function (recipes) {
+            Recipe.chefsOption(function (chefsOptions) {
+                return res.render("Admin/index", { chefsOptions, recipes })
             })
         })
     },
     create(req, res) {
-        Recipe.chefsOption(function(chefsOptions){
+        Recipe.chefsOption(function (chefsOptions) {
             return res.render("Admin/create", { chefsOptions })
         })
     },
     recipe_admin(req, res) {
         const id = req.params.id;
-        
-        Recipe.find(id , function(recipe) {
-            Recipe.chefsOption(function(chefsOptions){
-                return res.render("Admin/recipe", { chefsOptions , recipe })
+
+        Recipe.find(id, function (recipe) {
+            Recipe.chefsOption(function (chefsOptions) {
+                return res.render("Admin/recipe", { chefsOptions, recipe })
             })
         })
-        
+
     },
     recipe_admin_edit(req, res) {
         const { id } = req.params
-        
-        Recipe.find(id , function(recipe) {
-            if(!recipe) return res.send("Receita não encontrada")
-            
-            Recipe.chefsOption(function(chefsOptions){
-                return res.render("Admin/edit", { chefsOptions , recipe })
+
+        Recipe.find(id, function (recipe) {
+            if (!recipe) return res.send("Receita não encontrada")
+
+            Recipe.chefsOption(function (chefsOptions) {
+                return res.render("Admin/edit", { chefsOptions, recipe })
             })
         })
     },
@@ -67,7 +67,8 @@ module.exports = {
                 return res.send("porfavor preencha todos os campos")
         }
 
-        Recipe.create(req.body, function(recipe){
+        Recipe.create(req.body, function (recipe) {
+            console.log(req.body)
             return res.redirect(`/admin/Receitas/${recipe.id}`)
         })
     },
@@ -80,7 +81,7 @@ module.exports = {
             }
         }
         console.log(req.body)
-        Recipe.update(req.body, function(){
+        Recipe.update(req.body, function () {
             return res.redirect(`/admin/Receitas/${req.body.id}`)
         })
     },
