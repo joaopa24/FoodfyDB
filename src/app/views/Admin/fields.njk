@@ -38,9 +38,12 @@
     <div class="item">
         <p>Modo de preparo</p>
         <div class="preparations">
-            <div class="preparation">
-                <input type="text" name="preparation[]" value="{{recipe.preparation}}">
+            {% for preparation in recipe.preparation %}
+             <div class="preparation">
+                <input type="text" name="preparation[]" value="{{preparation}}">
             </div>
+            {% endfor %}
+           
 
         </div>
         <div class="content_add">
