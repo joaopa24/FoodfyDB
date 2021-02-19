@@ -54,7 +54,8 @@ module.exports = {
 
         Recipe.find(id, function (recipe) {
             if (!recipe) return res.send("Receita não encontrada")
-
+            
+            console.log(recipe)
             Recipe.chefsOption(function (chefsOptions) {
                 return res.render("Admin/edit", { chefsOptions, recipe })
             })
