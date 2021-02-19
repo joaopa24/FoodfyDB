@@ -440,3 +440,21 @@ header form input{
      border-radius: 4px;
      outline: none;
 }
+/* pagination */
+.pagination{
+     width: 100%;
+     display: flex;
+     justify-content: center;
+}
+.pagination a,
+.pagination span{
+     font-family: 'Roboto-Bold', sans-serif;
+     font-size: 20px;
+     text-decoration: none;
+     margin-right: 16px;
+     color: #111111;
+}
+.pagination a:hover{
+     color: #878787;
+     border-bottom: 2px solid #878787;;
+}

@@ -14,12 +14,8 @@ module.exports = {
             limit,
             offset,
             callback(recipes){
-                const pagination = {
-                    total: Math.ceil(recipes[0].total/ limit),
-                    page
-                }
                 Recipe.chefsOption(function (chefsOptions) {
-                    return res.render("home", { chefsOptions, recipes, pagination })
+                    return res.render("home", { chefsOptions, recipes })
                 })
             }
         }
