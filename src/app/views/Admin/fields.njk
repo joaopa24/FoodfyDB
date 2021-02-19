@@ -15,27 +15,26 @@
         <p>Autor</p>
         <div>
             <select name="chef">
-            {% for chef in chefsOptions %}
-             <option value="{{ chef.id }}" {% if recipe.chef_id == chef.id %}selected{% endif %}>{{chef.name}}</option>
-            {% endfor %}
+                {% for chef in chefsOptions %}
+                    <option value="{{ chef.id }}" {% if recipe.chef_id == chef.id %} selected{% endif %}>{{chef.name}}</option>
+                {% endfor %}
             </select>
         </div>
     </div>
     <div class="item">
         <p>Ingredientes</p>
         <div class="ingredients">
-            {% if recipe %}
+            {% if recipe.ingredients %}
                 {% for ingredient in recipe.ingredients %}
                     <div class="ingredient">
                         <input type="text" name="ingredients[]" value="{{ingredient}}">
                     </div>
                 {% endfor %}
-                {% else %}
+            {% else %}
                 <div class="ingredient">
                     <input type="text" name="ingredients[]" value="">
                 </div>
             {% endif %}
-
         </div>
         <div class="content_add">
             <a class="add_ingredient">Adicionar novo ingrediente</a>
@@ -44,11 +43,17 @@
     <div class="item">
         <p>Modo de preparo</p>
         <div class="preparations">
-            {% for preparation in recipe.preparation %}
+            {% if recipe.preparation %}
+                {% for preparation in recipe.preparation %}
+                    <div class="preparation">
+                        <input type="text" name="preparation[]" value="{{preparation}}">
+                    </div>
+                {% endfor %}
+            {% else %}
                 <div class="preparation">
-                    <input type="text" name="preparation[]" value="{{preparation}}">
+                    <input type="text" name="preparation[]" value="">
                 </div>
-            {% endfor %}
+            {% endif %}
         </div>
         <div class="content_add">
             <a class="add_preparation">Adicionar novo passo</a>
