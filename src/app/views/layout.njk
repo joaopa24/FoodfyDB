@@ -15,6 +15,11 @@
                     <a href="/Receitas">Receitas</a>
                     <a href="/Chefs">Chefs</a>
                 </div>
+
+                <form action="/Receitas" method="GET">
+                <input type="text" name="filter" placeholder="Buscar uma receita" value="">
+                <button type="submit">Buscar</button>
+                </form>
         </header>
         {% block content %}
         {% endblock %}
