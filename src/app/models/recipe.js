@@ -95,14 +95,12 @@ module.exports = {
                 WHERE recipes.title ILIKE '%${filter}%'
                 
                 `
-
                 totalQuery = `(
                     SELECT count(*) FROM recipes
                     ${filterQuery}
                 ) as total`
             }
-
-
+            
             query = `
             SELECT recipes.*,${totalQuery}
             FROM recipes
