@@ -106,7 +106,7 @@ module.exports = {
             SELECT recipes.*,${totalQuery}
             FROM recipes
             ${filterQuery}
-            LIMIT $1 OFFSET $1 
+            LIMIT $1 OFFSET $2 
             `
             
             db.query(query, [limit,offset], function(err,results){

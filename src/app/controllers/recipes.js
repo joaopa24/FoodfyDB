@@ -2,18 +2,54 @@ const Recipe = require("../models/recipe")
 
 module.exports = {
     home(req, res) {
-        Recipe.all(function (recipes) {
-            Recipe.chefsOption(function (chefsOptions) {
-                return res.render("home", { chefsOptions, recipes })
-            })
-        })
+        let { filter , page , limit } = req.query
+          
+        page = page || 1
+        limit = limit || 2
+        let offset = limit * (page - 1)
+
+        const params = {
+            filter,
+            page,
+            limit,
+            offset,
+            callback(recipes){
+                const pagination = {
+                    total: Math.ceil(recipes[0].total/ limit),
+                    page
+                }
+                Recipe.chefsOption(function (chefsOptions) {
+                    return res.render("home", { chefsOptions, recipes, pagination })
+                })
+            }
+        }
+        Recipe.paginate(params)
+
     },
     recipes(req, res) {
-        Recipe.all(function (recipes) {
-            Recipe.chefsOption(function (chefsOptions) {
-                return res.render("receitas", { chefsOptions, recipes })
-            })
-        })
+        let { filter , page , limit } = req.query
+          
+        page = page || 1
+        limit = limit || 2
+        let offset = limit * (page - 1)
+
+        const params = {
+            filter,
+            page,
+            limit,
+            offset,
+            callback(recipes){
+                const pagination = {
+                    total: Math.ceil(recipes[0].total/ limit),
+                    page
+                }
+                Recipe.chefsOption(function (chefsOptions) {
+                    return res.render("receitas", { chefsOptions, recipes, pagination })
+                })
+            }
+        }
+        Recipe.paginate(params)
+
     },
     about(req, res) {
         return res.render("sobre")
