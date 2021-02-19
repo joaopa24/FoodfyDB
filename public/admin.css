@@ -194,6 +194,9 @@ button[type="submit"] a{
     border: none;
 }
 .fields .item div textarea{
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    padding: 10px;
     resize: none;
     width: 940px;
     height: 250px;

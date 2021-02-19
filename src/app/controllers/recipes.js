@@ -15,7 +15,7 @@ module.exports = {
             offset,
             callback(recipes){
                 Recipe.chefsOption(function (chefsOptions) {
-                    return res.render("home", { chefsOptions, recipes })
+                    return res.render("home", { chefsOptions, recipes, filter })
                 })
             }
         }
@@ -39,7 +39,7 @@ module.exports = {
                     page
                 }
                 Recipe.chefsOption(function (chefsOptions) {
-                    return res.render("receitas", { chefsOptions, recipes, pagination })
+                    return res.render("receitas", { chefsOptions, recipes, pagination, filter })
                 })
             }
         }

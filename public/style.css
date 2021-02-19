@@ -424,6 +424,7 @@ header a:hover{
     font-family: 'Roboto-Bold', sans-serif;
     font-weight: bold;
     border-radius: 4px;
+    outline: none;
     
 }
 header form{

@@ -93,6 +93,7 @@ module.exports = {
             if(filter){
                 filterQuery = `${query}
                 WHERE recipes.title ILIKE '%${filter}%'
+                
                 `
 
                 totalQuery = `(
