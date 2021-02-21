@@ -58,14 +58,16 @@ module.exports = {
             limit,
             offset,
             callback(recipes){
-                console.log(recipes.length)
-                if (recipes == "") {
+                if (recipes.length === 0) {
                     const pagination = { page }
-                    
+                    console.log(recipes.length)
+                    console.log("if")
                     Recipe.chefsOption(function (chefsOptions) {
                         return res.render("results", { chefsOptions, recipes, pagination, filter })
                     })
                 } else {
+                    console.log(recipes.length)
+                    console.log("else")
                     const pagination = {
                         total: Math.ceil(recipes[0].total/ limit),
                         page,
