@@ -1,6 +1,9 @@
 {% extends "layout.njk" %}
 {% block content %}
     <div class="main_recipes">
+        <div class="results">
+            <p>Buscando por "{{ filter }}"</p>
+        </div>
         <section class="cards">
             {% for recipe in recipes %}
                 <div class="card" image="{{recipe.image}}" id="{{recipe.id}}">

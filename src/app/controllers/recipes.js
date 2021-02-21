@@ -45,6 +45,39 @@ module.exports = {
         }
         Recipe.paginate(params)
     },
+    results(req,res){
+        let { filter , page , limit } = req.query
+          
+        page = page || 1
+        limit = limit || 6
+        let offset = limit * (page - 1)
+
+        const params = {
+            filter,
+            page,
+            limit,
+            offset,
+            callback(recipes){
+                console.log(recipes.length)
+                if (recipes == "") {
+                    const pagination = { page }
+                    
+                    Recipe.chefsOption(function (chefsOptions) {
+                        return res.render("results", { chefsOptions, recipes, pagination, filter })
+                    })
+                } else {
+                    const pagination = {
+                        total: Math.ceil(recipes[0].total/ limit),
+                        page,
+                    }
+                    Recipe.chefsOption(function (chefsOptions) {
+                        return res.render("results", { chefsOptions, recipes, pagination, filter })
+                    })
+                }
+            }
+        }
+        Recipe.paginate(params)
+    },
     about(req, res) {
         return res.render("sobre")
     },

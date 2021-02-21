@@ -459,3 +459,13 @@ header form input{
      color: #878787;
      border-bottom: 2px solid #878787;;
 }
+/* results */
+.results{
+     margin-bottom: 20px;
+}
+.results p{
+     font-family: 'Roboto-bold', sans-serif;
+     font-weight: bolder;
+     font-size: 24px;
+     color: #111111;
+}

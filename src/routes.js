@@ -7,6 +7,7 @@ routes.get("/", recipes.home)
 routes.get("/Receitas", recipes.recipes)
 routes.get("/Sobre", recipes.about)
 routes.get("/Receitas/:id", recipes.recipe)
+routes.get("/Resultados", recipes.results)
 
 routes.get("/Chefs", chef.chefs)
 routes.get("/admin/Chefs", chef.chefsAdmin)
@@ -16,6 +17,7 @@ routes.get("/admin/Chefs/:id/edit", chef.chefAdmin_edit)
 routes.post("/admin/Chefs", chef.post)
 routes.delete("/admin/Chefs", chef.delete)
 routes.put("/admin/Chefs", chef.put)
+
 
 routes.get("/admin/Receitas", recipes.index)
 routes.get("/admin/Receitas/criar", recipes.create)
