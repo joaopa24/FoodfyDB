@@ -58,7 +58,7 @@ module.exports = {
             limit,
             offset,
             callback(recipes){
-                if (recipes.length === 0) {
+                if (recipes == 0) {
                     const pagination = { page }
                     console.log(recipes.length)
                     console.log("if")
